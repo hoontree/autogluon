@@ -97,17 +97,21 @@ hyperparameters = {
 ```
 
 ### 3️⃣ Understand Integration / 통합 이해하기
-**`models/utils.py:515`** - How Conv-LoRA is created and injected
+**`models/utils.py:515-523`** - How Conv-LoRA is created and injected
 
 ```python
-elif "conv_lora" in peft:
-    return ConvLoRALinear(
-        layer.in_features,
-        layer.out_features,
-        r=lora_r,
-        lora_alpha=lora_alpha,
-        conv_lora_expert_num=kwargs["conv_lora_expert_num"],
-    )
+# Inside create_adaptation() function at line 485
+def create_adaptation(peft: str, layer: nn.Module, lora_r: int, lora_alpha: int, **kwargs):
+    # ... other adaptation types ...
+    elif "conv_lora" in peft:  # Line 515
+        return ConvLoRALinear(
+            layer.in_features,
+            layer.out_features,
+            r=lora_r,
+            lora_alpha=lora_alpha,
+            merge_weights=False,
+            conv_lora_expert_num=kwargs["conv_lora_expert_num"],
+        )
 ```
 
 ---
