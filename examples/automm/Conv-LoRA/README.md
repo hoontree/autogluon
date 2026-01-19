@@ -2,6 +2,10 @@
 
 Examples showing how to use `Conv-LoRA` for parameter efficient fine-tuning SAM.
 
+> **📚 Looking for the Conv-LoRA implementation?**  
+> See [IMPLEMENTATION_GUIDE.md](IMPLEMENTATION_GUIDE.md) for a quick guide on where to find the Conv-LoRA implementation in the codebase.  
+> For detailed documentation, see [docs/HOW_TO_FIND_CONV_LORA_IMPLEMENTATION.md](../../../docs/HOW_TO_FIND_CONV_LORA_IMPLEMENTATION.md).
+
 ## 1. Installation
 The installation may take a while since AutoGluon Multimodal has multiple dependencies.
 ```shell
